@@ -1,0 +1,10 @@
+{% extends 'recipeapp/base.html' %}
+
+{% block content %}
+    <h1>Welcome to the Recipes App!</h1>
+    <p>Choose an option:</p>
+    <ul>
+        <li><a href="{% url 'recipe_list' %}">Recipe List</a></li>
+        <li><a href="{% url 'recipe_create' %}">Create New Recipe</a></li>
+    </ul>
+{% endblock %}

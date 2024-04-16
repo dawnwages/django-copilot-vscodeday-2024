@@ -1,0 +1,17 @@
+{% extends 'recipeapp/base.html' %}
+
+{% block content %}
+    <h1>Recipe List</h1>
+    <ul>
+        {% for recipe in recipes %}
+            <li>
+                <h2>{{ recipe.name }}</h2>
+                <p>{{ recipe.description }}</p>
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.name }} Image" style='width: 100px; height: auto;'>
+                <a href="{% url 'recipe_detail' recipe.id %}">View Recipe</a>
+            </li>
+        {% empty %}
+            <li>No recipes found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

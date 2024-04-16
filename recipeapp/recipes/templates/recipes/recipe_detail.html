@@ -1,0 +1,18 @@
+{% extends 'recipeapp/base.html' %}
+
+{% block content %}
+    <h1>{{ recipe.name }}</h1>
+    <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" style="width:auto; max-height:250px">
+
+    <h2>Description:</h2>
+    <p>{{ recipe.description }}</p>
+
+    <h2>Instructions:</h2>
+    <p>{{ recipe.instructions }}</p>
+
+
+    <a href="{% url 'recipe_create' %}">Create New Recipe</a>
+    <a href="{% url 'recipe_list' %}">Back to Recipe List</a>
+    <a href="{% url 'recipe_delete' recipe.id %}">Delete Recipe</a>
+    <a href="{% url 'recipe_update' recipe.id %}">Update Recipe</a>
+{% endblock %}
